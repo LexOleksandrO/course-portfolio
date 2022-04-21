@@ -14,7 +14,7 @@ function imageInsertion () {
   const imgContainer = document.createElement('img');
   imgParentContainer.innerText = '';
 
-  const imgTagAttrs = imgContainer.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/220px-DOM-model.svg.png');
+  imgContainer.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/220px-DOM-model.svg.png');
   imgParentContainer.append(imgContainer);
 
   /*// execution check
@@ -27,7 +27,10 @@ function imageInsertion () {
 
 
 //Task 2// За допомогою маніпуляцій DOM змінити title та текст в блоці "mainTable__header":
-
+function tableHeaderUpdate () {
+  const headerTitle = document.querySelector('.mainTable__header');
+  headerTitle.innerText = 'My homework #1 : HTML+JS+SomeCSS';
+}
 
 //Task 3// Заверстати довільний html в блоці "mainTable__content". Самий простенький, заголовок, трохи тексту, список скілів:
 
@@ -110,15 +113,22 @@ function neighboringCellAdjustment () {
   console.log('neighboringCellAdjustment - DONE')*/
 }
 
-function imgBoxAdjustment (imgIns, neighCell, rightSection) {
+function homework1_exe (headerUpd, imgIns, neighCell, rightSection) {
+  // centering my completed homework on the screen:
+  const documentPalette = document.querySelector('.mainTable');
+  documentPalette.setAttribute('align', 'center');
+
+  // updating my table header title <>:
+  setTimeout(headerUpd, 2000);
+
   // creating and adding the <img>:
-  setTimeout(imgIns, 2000);
+  setTimeout(imgIns, 3000);
 
   // adjusting the neighboring <td>:
   setTimeout(neighCell, 4000);
 
   // my right content section creation <table>:
-  setTimeout(rightSection, 6000);
+  setTimeout(rightSection, 5000);
 }
 
-imgBoxAdjustment (imageInsertion, neighboringCellAdjustment, myRightSection);
+homework1_exe (tableHeaderUpdate, imageInsertion, neighboringCellAdjustment, myRightSection);

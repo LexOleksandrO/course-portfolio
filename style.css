@@ -1,5 +1,5 @@
 body {
-  background-color: darkgoldenrod;
+  background-color: palegreen;
 }
 
 /*.mainTable { width: 100%;}*/
@@ -10,5 +10,21 @@ body {
 
 /*.mainTable__image{width: 300px;}*/
 
-.mainTable__header{}
-.mainTable__content{}
+.mainTable__header{
+  accent-color: chocolate;
+  font-family: fantasy;
+  color: darkgoldenrod;
+  font-size: 18px;
+  font-weight: bolder;
+}
+.mainTable__content{
+  font-family: "Book Antiqua";
+  color: blueviolet;
+  font-stretch: 15%;
+  font-variant: full-width;
+}
+
+.mainTable__content #th {
+  color: orange;
+  padding: 0px 40px;
+}
