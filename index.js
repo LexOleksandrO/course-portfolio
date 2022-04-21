@@ -8,14 +8,13 @@
 ///// HOMEWORK 1 /////
 
 //Task 1// Вставити зображення в блок "mainTable__image":
-//img URL = https://www.ontarioparks.com/images/headers/parks/summer/1200/longpoint.jpg
 
 function imageInsertion () {
-  let imgParentContainer = document.body.children[0].children[0].children[1].children[0];
-  let imgContainer = document.createElement('img');
+  const imgParentContainer = document.body.children[0].children[0].children[1].children[0];
+  const imgContainer = document.createElement('img');
   imgParentContainer.innerHTML = '';
 
-  let imgTagAttrs = imgContainer.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/220px-DOM-model.svg.png');
+  const imgTagAttrs = imgContainer.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/220px-DOM-model.svg.png');
   imgParentContainer.append(imgContainer);
 
   /*// execution check
@@ -31,14 +30,68 @@ function imageInsertion () {
 
 //Task 3// Заверстати довільний html в блоці "mainTable__content". Самий простенький, заголовок, трохи тексту, список скілів:
 
+// my right content container:
+const contentBox = document.body.children[0].children[0].children[1].children[1];
+
+// assembling a new content table:
+const newDiv = document.createElement('div');
+contentBox.append(newDiv);
+document.body.children[0].children[0].children[1].children[1].children[0].setAttribute('id', 'div');
+document.body.children[0].children[0].children[1].children[1].children[0].setAttribute('class', 'mainTable__contentBox__div');
+
+const newContentTable = document.createElement('table');
+newDiv.append(newContentTable);
+document.body.children[0].children[0].children[1].children[1].children[0].children[0].setAttribute('id','table');
+
+const newCTtbody = document.createElement('tbody');
+newContentTable.append(newCTtbody);
+
+const newCTth = document.createElement('th');
+newCTtbody.append(newCTth);
+document.body.children[0].children[0].children[1].children[1].children[0].children[0].children[0].children[0].setAttribute('id', 'th');
+document.body.children[0].children[0].children[1].children[1].children[0].children[0].children[0].children[0].setAttribute('colspan', '2');
+newCTth.innerText = 'My attempt to join HTML & JS';
+
+const newCTtr1 = document.createElement('tr');
+newCTtbody.append(newCTtr1);
+document.body.children[0].children[0].children[1].children[1].children[0].children[0].children[0].children[1].setAttribute('id', 'tr1');
+document.body.children[0].children[0].children[1].children[1].children[0].children[0].children[0].children[1].setAttribute('class', 'mainTable__contentBox__tr1');
+const newCTtd1_1 = document.createElement('td');
+newCTtr1.append(newCTtd1_1);
+newCTtd1_1.innerText = '1_1';
+const newCTtd1_2 = document.createElement('td');
+newCTtr1.append(newCTtd1_2);
+newCTtd1_2.innerText = '1_2';
+
+
+const newCTtr2 = document.createElement('tr');
+newCTtbody.append(newCTtr2);
+document.body.children[0].children[0].children[1].children[1].children[0].children[0].children[0].children[1].setAttribute('id', 'tr2');
+document.body.children[0].children[0].children[1].children[1].children[0].children[0].children[0].children[1].setAttribute('class', 'mainTable__contentBox__tr2');
+const newCTtd2_1 = document.createElement('td');
+newCTtd2_1.innerText = '2_1';
+newCTtr2.append(newCTtd2_1);
+const newCTtd2_2 = document.createElement('td');
+newCTtd2_2.innerText = '2_2';
+newCTtr2.append(newCTtd2_2);
+
+const newCTtr3 = document.createElement('tr');
+newCTtbody.append(newCTtr3);
+document.body.children[0].children[0].children[1].children[1].children[0].children[0].children[0].children[1].setAttribute('id', 'tr3');
+document.body.children[0].children[0].children[1].children[1].children[0].children[0].children[0].children[1].setAttribute('class', 'mainTable__contentBox__tr3');
+const newCTtd3_1 = document.createElement('td');
+newCTtd3_1.innerText = '3_1';
+newCTtr3.append(newCTtd3_1);
+const newCTtd3_2 = document.createElement('td');
+newCTtd3_2.innerText = '3_2';
+newCTtr3.append(newCTtd3_2);
+
 
 //Task 4// завдання з зірочкою: за допомогою javascript змінити ширину  mainTable__content на ширину зображення в блоці mainTable__image:
 function neighboringCellAdjustment () {
   // collecting the desired image's height & weight to set them as the attributes to the parent container:
-  let imgW = document.body.children[0].children[0].children[1].children[0].children[0].width;
-  let imgH = document.body.children[0].children[0].children[1].children[0].children[0].height;
-
-  console.log(`${imgH} / ${imgW}`);
+  const imgW = document.body.children[0].children[0].children[1].children[0].children[0].width;
+  const imgH = document.body.children[0].children[0].children[1].children[0].children[0].height;
 
   let imgBoxCell = document.body.children[0].children[0].children[1].children[0];
   imgBoxCell.setAttribute('width', imgW);
